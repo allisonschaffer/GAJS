@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+		<style>
+			.remove-item {
+				cursor: pointer;
+			}
+
+			.strikethrough {
+				text-decoration: line-through;
+			}
+
+
+		</style>
+	</head>
+	<body>
+		<h2>TODO</h2>
+		<ul>
+			<li>
+				<span>
+					<strong class='remove-item'>❌</strong> Wash the dishes
+				</span>
+				<input type="checkbox" checked="checked" />
+			</li>
+			<li>
+				<span>
+					<strong class='remove-item'>❌</strong> Take out the trash
+				</span>
+				<input type="checkbox" />
+			</li>
+			<li>
+				<span>
+					<strong class='remove-item'>❌</strong> Pay the rent
+				</span>
+				<input type="checkbox" />
+			</li>
+			<li>
+				<input type="text" />
+				<button>Add</button>
+			</li>
+		</ul>
+
+		<script src='http://code.jquery.com/jquery-latest.min.js'></script>
+		<script>
+			
+			$('button').on('click', function(){
+        			var text = $('input[type=text]').val();
+        			$('ul li:last').prev().after('<li>' + '<span>' + '<strong class="remove-item">'+'❌'+'</strong>' + ' ' + text + '</span>'
+        			+ '<input type="checkbox" />');
+       		});
+
+		
+		    $('input[type=checkbox]').on('change', function () {
+
+		        if ($(this).is(":checked")) {
+		            $(this).parent().addClass('strikethrough')
+		        } else {
+		            $(this).parent().removeClass('strikethrough')
+
+		        }
+		    })
+
+
+			$('ul li span .remove-item').on('click', function () {
+  				$(this).closest('li').remove();
+			});
+
+
+		</script>
+	</body>
+</html>
+
