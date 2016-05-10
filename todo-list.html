@@ -49,24 +49,27 @@
         			var text = $('input[type=text]').val();
         			$('ul li:last').prev().after('<li>' + '<span>' + '<strong class="remove-item">'+'❌'+'</strong>' + ' ' + text + '</span>'
         			+ '<input type="checkbox" />');
+        			crossOut()
+        			remove()
        		});
 
-		
-		    $('input[type=checkbox]').on('change', function () {
+			function crossOut() {
+			    $('input[type=checkbox]').on('change', function () {
 
-		        if ($(this).is(":checked")) {
-		            $(this).parent().addClass('strikethrough')
-		        } else {
-		            $(this).parent().removeClass('strikethrough')
+			        if ($(this).is(":checked")) {
+			            $(this).parent().addClass('strikethrough')
+			        } else {
+			            $(this).parent().removeClass('strikethrough')
 
-		        }
-		    })
+			        }
+			    })
+			}  
 
-
-			$('ul li span .remove-item').on('click', function () {
-  				$(this).closest('li').remove();
-			});
-
+			function remove(){
+				$('ul li span .remove-item').on('click', function () {
+	  				$(this).closest('li').remove();
+				});
+			}
 
 		</script>
 	</body>
