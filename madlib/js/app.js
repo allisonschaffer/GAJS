@@ -12,7 +12,7 @@ function createRandom(){
 }
 
 
-var randomStartup = createRandom()
+newStartup = ''
 
 $('#create').on("click", function() {
 
@@ -20,9 +20,11 @@ $('#create').on("click", function() {
 
     $('.page #xForY').html(randomStartup);
 
-    $('#save').one("click", function() {
-    	$('.favoritesTable table').append('<li>'+randomStartup+'</li>');
-    });
+    // $('#save').one("click", function() {
+    // 	$('.favoritesTable table').append('<li>'+randomStartup+'</li>');
+    // });
+
+    newStartup = randomStartup;
 
 	// 	var templateSource = $('#favoriteStartup').html()
 	// 	var compiledTemplate = Handlebars.compile(templateSource)
@@ -38,6 +40,10 @@ $('#create').on("click", function() {
 	// });
 
 });
+
+$('#save').on("click", function() {
+    	$('.favoritesTable table').append('<li>'+newStartup+'</li>');
+    });
 
 
 
