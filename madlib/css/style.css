@@ -33,7 +33,7 @@ h1 {
 	text-align: center;
 	font-size: 1.5em;
 	padding-top: 100px;
-
+	text-transform: uppercase;
 }
 
 header {
@@ -45,8 +45,11 @@ header {
 h2 {
 	text-align: center;
 	font-size: 3.5em;
-	padding: 0;
+	padding-top: 5px;
 	margin: 0;
+	color: white;
+	letter-spacing: 20px;
+	font-style: italic;
 }
 
 .favoritesTable {
@@ -62,13 +65,21 @@ h2 {
 }
 
 table {
-	width: 100%;
+	width: 40%;
+	margin: 0 auto;
+	margin-top: 20px;
+	margin-bottom: 50px;
 }
 
 li {
 	list-style: none;
-	
-	color: 696969;
-	text-align: center;
+	color: #A9A9A9;
+	text-transform: uppercase;
+	padding-top: 10px;
 
+}
+
+span {
+	cursor: pointer;
+	color: #93E0EB;
 }

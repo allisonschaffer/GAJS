@@ -11,8 +11,13 @@ function createRandom(){
 	return 'A startup that is ' + startups[random1] + ', but for ' + groups[random2];
 }
 
+var newStartup = ''
 
-newStartup = ''
+var favorites = []
+
+console.log(newStartup)
+
+
 
 $('#create').on("click", function() {
 
@@ -20,50 +25,58 @@ $('#create').on("click", function() {
 
     $('.page #xForY').html(randomStartup);
 
-    // $('#save').one("click", function() {
-    // 	$('.favoritesTable table').append('<li>'+randomStartup+'</li>');
-    // });
-
     newStartup = randomStartup;
-
-	// 	var templateSource = $('#favoriteStartup').html()
-	// 	var compiledTemplate = Handlebars.compile(templateSource)
-
-	// 	var data = {
-	// 		favoriteStartup: randomStartup
-	// 	}
-
-	// 	var generatedHtml = compiledTemplate(data)
-	        		
-	//     $('.favoritesTable table').append(generatedHtml);
-
-	// });
 
 });
 
+
+
+
 $('#save').on("click", function() {
-    	$('.favoritesTable table').append('<li>'+newStartup+'</li>');
-    });
 
+	var isInArray = favorites.indexOf(newStartup) >= 0;
 
+    if (!isInArray && newStartup != '') {
 
-// $('#save').on("click", function() {
+    	favorites.push(newStartup);
 
-// 	var templateSource = $('#favoriteStartup').html()
-// 	var compiledTemplate = Handlebars.compile(templateSource)
+//     		var templateSource = $('#favoriteStartup').html()
+// 			var compiledTemplate = Handlebars.compile(templateSource)
 
-// 	var data = {
-// 		newStartup: createRandom()
-// 	}
+// 			var data = {
+// 				favoriteStartup: newStartup
+// 			}
 
-// 	var generatedHtml = compiledTemplate(data)
+// 			var generatedHtml = compiledTemplate(data)
         		
-//     $('.page #xForY').html(generatedHtml);
+//         	$('.favoritesTable table').append(generatedHtml);
+
+//         }
 
 // });
 
+ 		$('.favoritesTable table').append('<li>'+'<span>'+'♥ '+'</span>'+newStartup+'</li>');
+		
+	}    
+});
+
+
+
+
+$('table').on('click', 'span', function () {
+	  $(this).closest('li').remove();
+});
 
 
 $('#save').one("click", function() {
 	$('.favoritesTable').show();
 });
+
+
+
+
+
+
+
+
+
