@@ -235,3 +235,20 @@ nav ul ul li {
   text-align: right;
   color: #097FB2;
 }
+
+h3.titleLink {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.ajaxLoader {
+  width: 100px;
+  height: 100px;
+  position: fixed;
+  top: 50px;
+  left: 45%;
+  background-image: url(../images/ajax_loader.gif);
+  background-repeat: no-repeat;
+  background-position: center center;
+}

@@ -1,0 +1,96 @@
+<script id="feedItems" type="text/x-handlebars-template">
+	<article class="article">
+		<section class="featuredImage">
+			<img src = "{{content.media.images.5.url}}" alt="" />
+		</section>
+		<section class="articleContent">
+			<a href="#"><h3 class="titleLink">{{content.title}}</h3></a>
+			<h6>{{tagsList content.tags}}</h6>
+		</section>
+		<section class="impressions">
+			{{digg_score}}
+		</section>
+		<div class="clearfix"></div>
+	</article>
+</script>
+
+<script id="feedItems2" type="text/x-handlebars-template">
+	<article class="article">
+		<section class="featuredImage">
+			<img src = "https://c1.staticflicr.com/8/7344/26763689584_dc36b26d86_k.jpg" alt="" />
+		</section>
+		<section class="articleContent">
+			<a href="#"><h3 class="titleLink">{{data.title}}</h3></a>
+			<h6>{{data.author}}</h6>
+		</section>
+		<section class="impressions">
+			{{data.score}}
+		</section>
+		<div class="clearfix"></div>
+	</article>
+</script>
+
+<script id="feedItems3" type="text/x-handlebars-template">
+	<article class="article">
+		<section class="featuredImage">
+			<img src = "https://c8.staticflickr.com/8/7304/26770940863_c998742937_k.jpg" alt="" />
+		</section>
+		<section class="articleContent">
+			<a href="#"><h3 class="titleLink">{{title}}</h3></a>
+			<h6>{{categories}}</h6>
+		</section>
+		<section class="impressions">
+			400
+		</section>
+		<div class="clearfix"></div>
+	</article>
+</script>
+
+
+<script id="popUpArticle" type="text/x-handlebars-template">
+	<div id="popUp" class="loader hidden">
+		<a href="#" class="closePopUp">X</a>
+		<div class="container">
+			<h1 class="title">{{content.title}}</h1>
+			<p>
+				{{content.description}}
+			</p>
+			<a href="{{content.url}}" class="popUpAction" target="_blank">Read more from soure</a>
+		</div>
+	</div>
+</script>
+
+<script id="popUpArticle2" type="text/x-handlebars-template">
+	<div id="popUp" class="loader hidden">
+		<a href="#" class="closePopUp">X</a>
+		<div class="container">
+			<h1 class="title">{{data.title}}</h1>
+			<p>
+				{{data.title}}
+			</p>
+			<a href="{{data.url}}" class="popUpAction" target="_blank">Read more from soure</a>
+		</div>
+	</div>
+</script>
+
+<script id="popUpArticle3" type="text/x-handlebars-template">
+	<div id="popUp" class="loader hidden">
+		<a href="#" class="closePopUp">X</a>
+		<div class="container">
+			<h1 class="title">{{title}}</h1>
+			<p>
+				{{contentSnippet}}
+			</p>
+			<a href="{{link}}" class="popUpAction" target="_blank">Read more from soure</a>
+		</div>
+	</div>
+</script>
+
+
+
+h3.titleLink {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
