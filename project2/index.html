@@ -16,39 +16,29 @@
 <body>
 
   <header>
+    <img src="images/feedr.png" alt="logo" class="logo">
     <section class="container">
-      <a href="#"><h1>Feedr</h1></a>
       <nav>
-        <ul>
-          <li><a href="#">News Source: <span>Source Name</span></a>
-            <ul>
+<!--         <ul> -->
+<!--           <li><a href="#">News Source: <span>Source Name</span></a> -->
+            <ul class="clearfix">
               <li class='digg'><a href="#">Digg</a></li>
               <li class='reddit'><a href="#">Reddit</a></li>
               <li class='google'><a href="#">Google</a></li>
             </ul>
-          </li>
-        </ul>
-        <section id="search">
+            <div class="clearfix"></div>
+       <!--    </li> -->
+<!--         </ul> -->
+<!--         <section id="search">
           <input type="text" name="name" value="">
           <a href="#"><img src="images/search.png" alt="" /></a>
-        </section>
+        </section> -->
       </nav>
       <div class="clearfix"></div>
     </section>
   </header>
-  <div id="popUp" class="loader hidden">
-      <a href="#" class="closePopUp">X</a>
-      <div class="container">
-          <h1 class="title">Article Title</h1>
-          <p>
-          Here's a description.
-          </p>
-              <a href="#" class="popUpAction" target="_blank">Read more from source</a>
-      </div>
-  </div>
 
   <section id="main" class="container">     
-
 
   </section>
 
@@ -87,7 +77,7 @@
 
       <article class="article">
         <section class="featuredImage">
-          <img src="https://c1.staticflickr.com/8/7344/26763689584_dc36b26d86_k.jpg" alt=""/>
+          <img src="images/reddit.png" alt=""/>
         </section>
         <section class="articleContent">
           <a href="#"><h3 class="titleLink">{{data.title}}</h3></a>
@@ -108,7 +98,7 @@
 
         <article class="article">
           <section class="featuredImage">
-            <img src="https://c8.staticflickr.com/8/7304/26770940863_c998742937_k.jpg" alt=""/>
+            <img src="images/google.jpg" alt=""/>
           </section>
           <section class="articleContent">
             <a href="#"><h3 class="titleLink">{{title}}</h3></a>
@@ -148,7 +138,7 @@
             <div class="container">
               <h1 class="title">{{data.title}}</h1>
               <p>
-                {{data.title}}
+                <iframe src="{{data.url}}"></iframe>
               </p>
               <a href="{{data.url}}" class="popUpAction" target="_blank">Read more from source</a>
             </div>
@@ -163,7 +153,7 @@
             <div class="container">
               <h1 class="title">{{title}}</h1>
               <p>
-                {{contentSnippet}}
+                <iframe src="{{link}}"></iframe>
               </p>
               <a href="{{link}}" class="popUpAction" target="_blank">Read more from source</a>
             </div>

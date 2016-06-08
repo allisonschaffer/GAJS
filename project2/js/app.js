@@ -9,8 +9,11 @@ Handlebars.registerHelper('tagsList', function(tags) {
     	tagLine += ', '
 	}
 
+	tagLine = tagLine.substring(0, tagLine.length-2)
+
 	return tagLine
 });	
+
 
 
 
@@ -45,14 +48,18 @@ $('li.digg').on('click', function(){
                     var templateSource = $('#popUpArticle').html()
 					var compiledTemplate = Handlebars.compile(templateSource)
                 
+					var generatedHtml = compiledTemplate(article)
+                	
+                	var $popUpContent = $(generatedHtml).appendTo('body')
 
-
-                	var $popUpContent = $(generatedHtml).appendTo('#popUp')
-
-     				$('#popUp').removeClass('hidden');
                 })
             })
-		}
+		},
+
+		error: function() {
+        	$('#main').html('Something went wrong...')
+
+    	}
 	});	
 })
 
@@ -84,9 +91,21 @@ $('li.reddit').on('click', function(){
 
                 $articleContainer.on('click', '.titleLink', function(event) {
                     console.log(article)
+
+                    var templateSource = $('#popUpArticle2').html()
+					var compiledTemplate = Handlebars.compile(templateSource)
+                
+					var generatedHtml = compiledTemplate(article)
+                	
+                	var $popUpContent = $(generatedHtml).appendTo('body')
                 })
             })
-		}
+		},
+
+		error: function() {
+        	$('#main').html('Something went wrong...')
+
+    	}
 	});	
 })
 
@@ -120,12 +139,25 @@ $('li.google').on('click', function(){
 
                 $articleContainer.on('click', '.titleLink', function(event) {
                     console.log(article)
+
+                    var templateSource = $('#popUpArticle3').html()
+					var compiledTemplate = Handlebars.compile(templateSource)
+                
+					var generatedHtml = compiledTemplate(article)
+                	
+                	var $popUpContent = $(generatedHtml).appendTo('body')
                 })
             })
 		
-		}
+		},
+
+		error: function() {
+        	$('#main').html('Something went wrong...')
+
+    	}
 	});	
 })
+
 
 
 $('#main').on('click', function() {
@@ -136,14 +168,12 @@ $('#main').on('click', function() {
     }, 1000);
 });
 
-$('body #popUp .closePopUp').on('click', function() {
-	$('#popUp').addClass('hidden')
-	$('#popUp').addClass('loader');
+
+
+$('body').on('click', '.closePopUp', function() {
+	console.log('close');
+	$('#popUp').remove()
 })
 
-
-// $('.articleContent').on('click', function(){
-// 	console.log('hey');
-// })
 
 

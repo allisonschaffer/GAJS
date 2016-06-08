@@ -1,17 +1,17 @@
 /* General styles */
 .container {
-  max-width: 1000px;
+  max-width: 750px;
   margin: 0 auto;
 }
 
 #popUp {
-  opacity: 0.95;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background:  #fff;
+    opacity: .95;
+    position: absolute;
+    top: 75px;
+    left: 7.5%;
+    width: 85%;
+    height: 100%;
+    background: #fff;
 }
 
 #popUp .closePopUp {
@@ -19,14 +19,18 @@
   top: 20px;
   right: 20px;
   font-size: 40px;
-  color: #FE052C;
+  color: #4682B4 ;
   text-decoration: none;
 }
 
 #popUp.loader {
-  background-image: url(../images/ajax_loader.gif);
+  background-image: url(../images/ajax_loader_pop.gif);
   background-repeat: no-repeat;
   background-position: center center;
+  background-size: 40px;
+/*  background-image: url(../images/ajax_loader.gif);
+  background-repeat: no-repeat;
+  background-position: center center;*/
 }
 
 #popUp.loader .container {
@@ -43,7 +47,7 @@
 
 #popUp .popUpAction {
   padding: 10px;
-  background-color: #FE052C;
+  background-color: #4682B4;
   color: #fff;
   text-decoration: none;
   border-radius: 5px;
@@ -53,18 +57,29 @@
 }
 
 #popUp .popUpAction:hover {
-  color: #FE052C;
+  color: #4682B4;
   background: #fff;
 }
 
 /* Header styles */
 header {
-  background-color: #FE052C;
+  background-image: url(../images/na.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
   position: fixed;
+  height: 300px;
   top: 0;
   left: 0;
   right: 0;
 }
+
+img.logo {
+  width: 14%;
+  display: block;
+  margin: 0 auto;
+  padding-top: 19px;
+}
+
 
 header h1 {
   color: #FFF;
@@ -77,14 +92,22 @@ header h1 {
 
 /* Header navigation bar */
 header nav {
-  padding: 10px 2%;
+      padding: 10px 2%;
+    /* width: 76%; */
+    /* float: right; */
+    text-align: right;
+    line-height: 30px;
+    margin-top: 0;
+    /* position: relative; */
+    vertical-align: middle;
+/*  padding: 10px 2%;
   width: 76%;
   float: right;
   text-align: right;
   line-height: 30px;
   margin-top: 0;
   position: relative;
-  vertical-align: middle;
+  vertical-align: middle;*/
 }
 
 /* Search bar */
@@ -143,26 +166,32 @@ header nav a {
 
 header nav a:hover {
   background-color: #fff;
-  color: #CC0020;
+  color: #1E90FF;
 }
 
 nav ul {
 	padding:0;
+  padding-top: 20px
 	margin:0;
-  margin-right: 30px;
 	list-style: none;
 	position: relative;
 	}
 
 nav ul li {
-	display:inline-block;
+  display: inline-block;
+    position: relative;
+    float: left;
+    width: 33%;
+    text-align: center;
+    text-transform: uppercase;
+/*	display:inline-block;`
 	background-color: #CC0020;
-  position: relative;
+  position: relative;*/
 }
 
 nav ul ul {
-	display: none;
-	position: absolute;
+/*	display: none;
+*/	position: absolute;
 	top: 40px;
   right: -30px;
 }
@@ -182,7 +211,7 @@ nav ul ul li {
 
 /* Main Section */
 #main {
-  margin-top: 65px;
+  margin-top: 335px;
 }
 
 /* Individual Article Styling */
@@ -219,7 +248,8 @@ nav ul ul li {
 
 .article .articleContent h3 {
   margin-bottom: 0;
-  color: #FE052C;
+  color: #6495ED;
+  font-size: 1em;
 }
 
 .article .articleContent h6 {
@@ -228,27 +258,40 @@ nav ul ul li {
 }
 
 .article .impressions {
-  width: 15%;
-  float: right;
-  font-size: 30px;
-  margin-top: 15px;
-  text-align: right;
-  color: #097FB2;
+    width: 12%;
+    float: right;
+    font-size: 20px;
+    margin-top: 15px;
+    text-align: right;
+    color: #4682B4 ;
 }
 
 h3.titleLink {
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+h1.title {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  text-transform: uppercase;
 }
 
 .ajaxLoader {
   width: 100px;
   height: 100px;
-  position: fixed;
-  top: 50px;
-  left: 45%;
-  background-image: url(../images/ajax_loader.gif);
+  display: block;
+  margin: 0 auto;
+  background-image: url(../images/ajax_loader_pop.gif);
   background-repeat: no-repeat;
   background-position: center center;
+  background-size: 40px;
+}
+
+iframe {
+  height: 400px;
+  width: 100%;
+  margin: 0 auto;
 }

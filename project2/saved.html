@@ -94,3 +94,15 @@ h3.titleLink {
     overflow: hidden;
 }
 
+
+function createRandom(){
+	var tags = ['Global', 'Entertainment', 'Politics', 'Travel', 'Sports', 'Economics', 'Health', 'Science', 'Food', 'Technology', 'Business', 'Law', 'Crime'];
+	var randomTag = Math.floor((Math.random() * tags.length));
+	return tags[randomTag]
+}
+
+console.log(createRandom())
+console.log(createRandom())
+console.log(createRandom())
+console.log(createRandom())
+
